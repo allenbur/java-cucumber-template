@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class TrainLineJourneyInformationPage extends Page {
+public class TrainLineJourneyInformationPage extends BasePage {
     public TrainLineJourneyInformationPage(WebDriver driver) {
         super(driver);
     }
@@ -15,6 +15,10 @@ public class TrainLineJourneyInformationPage extends Page {
         String journeyOriginAndDestination = journeyStations.getText();
         Assert.assertTrue("Validate text contains ‘" + Origin + "’", journeyOriginAndDestination.contains(Origin));
         Assert.assertTrue("Validate text contains ‘" + Destination + "’", journeyOriginAndDestination.contains(Destination));
+    }
+
+    public void checkPriceTableIsDisplayed () {
+        driver.findElement(By.cssSelector(".matrix-table.matrix-out")).isDisplayed();
     }
 
 }

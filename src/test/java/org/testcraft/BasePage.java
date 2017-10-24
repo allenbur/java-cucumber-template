@@ -2,11 +2,11 @@ package org.testcraft;
 
 import org.openqa.selenium.WebDriver;
 
-public class Page {
+public class BasePage {
 
    protected final WebDriver driver;
 
-    public Page(WebDriver driver) {
+    public BasePage(WebDriver driver) {
         this.driver = driver;
     }
 }
