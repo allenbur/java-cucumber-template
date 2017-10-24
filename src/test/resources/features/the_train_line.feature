@@ -6,4 +6,5 @@ Feature: The Train Line
   Scenario: Search for journey details between two locations
     Given I am on "https://www.thetrainline.com"
     When I set the journey from "Brighton" to "London"
-    Then  I click the button to get times and tickets
+    And  I click the button to get times and tickets
+    Then I see journey information for "Brighton" to "London"
