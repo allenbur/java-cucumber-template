@@ -13,6 +13,7 @@ public class Hooks {
     @Before
     public void openBrowser() {
         driver = new ChromeDriver();
+        // Maximises the window so some buttons can be clicked without any issues.
         driver.manage().window().maximize();
     }
 

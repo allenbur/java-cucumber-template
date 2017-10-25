@@ -24,6 +24,7 @@ public class TrainLineStepDefs {
     public void i_am_on() throws Throwable {
         homePage.navigateTo();
         homePage.closeCookiesBar();
+        homePage.checkTrainLineTitle();
     }
 
 
@@ -72,6 +73,8 @@ public class TrainLineStepDefs {
     public void i_set_the_number_of_adults_to_and_the_number_of_children_to(String arg1, String arg2) throws Throwable {
         homePage.addPeople(arg1 , arg2);
     }
+
+
 }
 
 
