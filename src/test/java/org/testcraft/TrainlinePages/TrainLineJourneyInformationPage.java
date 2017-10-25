@@ -1,9 +1,10 @@
-package org.testcraft;
+package org.testcraft.TrainlinePages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testcraft.BasePage;
 
 public class TrainLineJourneyInformationPage extends BasePage {
     public TrainLineJourneyInformationPage(WebDriver driver) {

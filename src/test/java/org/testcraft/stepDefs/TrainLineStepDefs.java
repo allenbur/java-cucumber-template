@@ -1,13 +1,11 @@
 package org.testcraft.stepDefs;
 
-import com.sun.javaws.jnl.InformationDesc;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.testcraft.TrainLineHomePage;
-import org.testcraft.TrainLineJourneyInformationPage;
+import org.testcraft.TrainlinePages.TrainLineHomePage;
+import org.testcraft.TrainlinePages.TrainLineJourneyInformationPage;
 
 public class TrainLineStepDefs {
     public WebDriver driver;
@@ -25,6 +23,7 @@ public class TrainLineStepDefs {
     @Given("^I am on the Trainline homepage$")
     public void i_am_on() throws Throwable {
         homePage.navigateTo();
+        homePage.closeCookiesBar();
     }
 
 
@@ -45,7 +44,7 @@ public class TrainLineStepDefs {
         informationPage.checkPriceTableIsDisplayed();
     }
 
-    // ** EXERCISE THREE related **
+    // ** EXERCISE THREE **
 
     @When("^I select the return button$")
     public void i_select_the_return_button() throws Throwable {
@@ -62,7 +61,17 @@ public class TrainLineStepDefs {
         homePage.clickNextDay();
     }
 
+    // ** EXERCISE FIVE **
 
+    @When("^I select the outward journey to be \"([^\"]*)\" days in the future$")
+    public void i_select_the_outward_joruney_to_be_days_in_the_future(Integer arg1) throws Throwable {
+        homePage.pickFutureOutDate(arg1);
+    }
+
+    @When("^I set the number of adults to \"([^\"]*)\" and the number of children to \"([^\"]*)\"$")
+    public void i_set_the_number_of_adults_to_and_the_number_of_children_to(String arg1, String arg2) throws Throwable {
+        homePage.addPeople(arg1 , arg2);
+    }
 }
 
 
